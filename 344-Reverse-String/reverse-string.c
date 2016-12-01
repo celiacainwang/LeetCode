@@ -9,13 +9,15 @@
 #include <string.h>
 
 char* reverseString(char* s) {
-	int i;
 	char temp;
+    int reverse_times = strlen(s) / 2;
+    int reverse_superscript = strlen(s) - 1;
+	int i;
 
-	for (i = 0; i < (strlen(s) / 2); i++) {
+	for (i = 0; i < reverse_times; i++) {
 		temp = s[i];
-		s[i] = s[strlen(s) - 1 - i];
-		s[strlen(s) - 1 - i] = temp;
+		s[i] = s[reverse_superscript - i];
+		s[reverse_superscript - i] = temp;
 	}
 
 	return s;
